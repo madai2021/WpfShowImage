@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfShowImage.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfShowImage"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        SizeChanged="Window_SizeChanged">
+    <Grid>
+        <DockPanel>
+            <Menu x:Name="menu" DockPanel.Dock="Top">
+                <MenuItem Header="Base" IsCheckable="false" Command="{Binding OpenBaseImgFile}"/>
+                <MenuItem Header="Overlay" IsCheckable="false" Command="{Binding OpenOverlayImgFile}"/>
+                <MenuItem Header="View" IsCheckable="false" Command="{Binding ViewImgFiles}"/>
+            </Menu>
+            <Image
+                Source="{Binding Img}"
+                Height="{Binding ImgHeight}"
+                Width="{Binding ImgWidth}"
+            />
+        </DockPanel>
+    </Grid>
+</Window>
